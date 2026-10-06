@@ -1,4 +1,4 @@
-# Limboole Nix flake
+# limboole-nix
 
 Builds [Limboole](https://fmv.jku.at/limboole/) **1.2** from the upstream
 `limboole1.2.tgz` source archive, with the PicoSAT 965 SAT backend from Nixpkgs.
@@ -7,6 +7,15 @@ The archive's hash and the Nixpkgs revision (`flake.lock`) are pinned.
 Requires Nix with `nix-command` and `flakes` enabled.
 
 ## Use
+
+Run directly from GitHub without cloning:
+
+```sh
+nix run github:rschaffar/limboole-nix -- -h
+printf 'a | !a\n' | nix run github:rschaffar/limboole-nix
+```
+
+Or, from a local checkout:
 
 ```sh
 nix build                          # result/bin/{limboole,dimacs2boole}
